@@ -1,0 +1,15 @@
+[Unit]
+Description=My web server
+After=network.target
+Requires=floppyServer.socket
+
+[Service]
+ExecStart=/usr/bin/python -u floppyServer.py
+WorkingDirectory=/home/pi/floppy
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
