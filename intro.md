@@ -58,9 +58,19 @@ sr0     11:0    1  82,6M  0 rom
 
 Vložíme SD kartu...
 
-TODO...
+```
+yoyo@bionic:~$ lsblk
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0         7:0    0  34,6M  1 loop /snap/gtk-common-themes/818
+...
+sda           8:0    0    10G  0 disk
+└─sda1        8:1    0    10G  0 part /
+sr0          11:0    1  82,6M  0 rom
+mmcblk0     179:0    0  14.9G  0 disk 
+└─mmcblk0p1 179:1    0  14.9G  0 part 
+```
 
-Zaujíma nás celý `disk` a nie `part`ície na ňom.
+Zaujíma nás celý `disk` a nie `part`ície na ňom (`mmcblko` vs `mmcblk0p1`).
 Ak máme notebook so zabudovanou čítačkou kariet, tak to bude pravdepodovne `mmbcblk0`.
 
 Keď už vieme, ktoré zariadenie je naša SD karta, môžeme na ňu nahrať Raspbian:
