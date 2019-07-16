@@ -12,7 +12,7 @@ cheme *Raspbian Buster Lite*, čo je relatívne malý systém bez grafického pr
 **"Relatívne malý" je stále dosť veľký na zahltenie wifi `;-)`, takže si ho stiahnite radšej napríklad z nasledovnej
 url:**
 
-http://bionic.local/rpi/2019-07-10-raspbian-buster-lite.zip
+http://mbpro.local/rpi/2019-07-10-raspbian-buster-lite.zip
 
 Z príkazového riadku napríklad:
 
