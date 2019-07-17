@@ -49,11 +49,9 @@ def cleanup():
     print("done")
     GPIO.cleanup()
 
-
 if __name__ == '__main__':
     try:
         reset()
-#   play(220, 0.5)
         playNotes('c/4 d/4 e/4')
     except KeyboardInterrupt:
         pass
