@@ -26,7 +26,10 @@ def calculateFreqs():
 
 noteFreq = calculateFreqs()
 noteAdj = { '#': 1, 's': 1, 'b': -1, 'f': -1 } # # or s for sharp,  b or f for flat
-noteRegex = re.compile(r'^([A-Ha-hzZ])([#bsf]?)([-+]?\d*)/(\d+)(\.?)$')
+noteRegex = re.compile(r'^([A-Ha-hzZ])([#bsf]?)([-+]?\d*)([/*])(\d+)(\.?)$')
+
+class BadNote(Exception):
+	pass
 
 def parse(s, tempo = 120, denominator = 4):
 	"""Parse the textual note description of a note.
@@ -34,9 +37,15 @@ def parse(s, tempo = 120, denominator = 4):
 	"""
 	matches = noteRegex.match(s)
 	if matches == None:
-		raise Exception("Bad note: '%s'" % s)
+		raise BadNote(s)
 
-	duration = 60.0 * denominator / tempo / int(matches.group(4))
+	if matches.group(4) == "/":
+		duration = 60.0 * denominator / int(matches.group(5)) / tempo
+	else:
+		duration = 60.0 * denominator * int(matches.group(5)) / tempo
+
+	if matches.group(6) == ".":
+		duration *= 1.5
 
 	if matches.group(1).lower() == 'z':
 		return (0, duration)
