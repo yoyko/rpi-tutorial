@@ -9,8 +9,8 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 country=sk
 ctrl_interface=/var/run/wpa_supplicant
 network={
-    ssid="yoho"
-    psk="adsfghjkl"
+    ssid="pi"
+    psk="malinocka"
 }
 ```
 Potom:
