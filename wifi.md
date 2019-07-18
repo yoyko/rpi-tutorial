@@ -21,3 +21,10 @@ Prípadne ak nezafunguje:
 ```sh
 sudo systemctl restart wpa_supplicant
 ```
+
+Teraz môžeme skúsiť stiahnúť nejaké súbory:
+
+```
+wget https://raw.githubusercontent.com/yoyko/rpi-tutorial/master/python/floppy.py
+wget https://raw.githubusercontent.com/yoyko/rpi-tutorial/master/python/note.py
+```
