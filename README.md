@@ -10,3 +10,4 @@ RPi tutoriál
 - [Rôzne](rozne.md)
 - [Web Server](server.md)
 - [WiFi AP](ap.md)
+- [Bluetooth](bluetooth.md)
